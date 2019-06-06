@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Поисковик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <form action="/" method='POST' class="input-form">
+            <div>Поиск</div>
+            <input type="text" name="input-query" class="input-query" placeholder="Введите ключевые слова"><br>
+            <div>Цена, от</div>
+            <input type="number" class="input-price-min" name="input-price-min" pattern="[0-9]+" value="0"><br>
+            <div>Цена, до</div>
+            <input type="number" class="input-price-max" name="input-price-max" pattern="[0-9]+" value="1000000"><br>
+            <input type="submit" name="submit" value="Найти">
+        </form>
+
+        <section class="results">
+
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/main.js"></script>
+</body>
+
+</html>
