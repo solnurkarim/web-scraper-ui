@@ -25,6 +25,7 @@ app.post('/search', (req, res) => {
     const price_min = Number(req.body['input-price-min']);
     const price_max = Number(req.body['input-price-max']);
     let pattern = keywords.replace(/[,| ]+/g, '|');
+    pattern = new RegExp(pattern, 'i');
 
     db_client.connect(process.env.DB_URL, {
         useNewUrlParser: true
@@ -49,8 +50,7 @@ app.post('/search', (req, res) => {
         results.toArray((err, results) => {
             if (err) return console.log(err);
             res.status(200).send(results);
+            client.close();
         })
-
-        client.close();
     })
 })
